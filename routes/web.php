@@ -29,10 +29,18 @@ Route::get('/students/edit', function () {
 // students Crud
 
 
-Route::get('/students','StudentController@index')->name('student.index');
-Route::post('/students/create','StudentController@store')->name('student.store');
-Route::get('/students/edit/{id}','StudentController@edit')->name('student.edit');
-Route::put('/students/update/{id}','StudentController@update')->name('student.update');
+Route::get('/students', 'StudentController@index')->name('student.index');
+Route::post('/students/create', 'StudentController@store')->name('student.store');
+Route::get('/students/edit/{id}', 'StudentController@edit')->name('student.edit');
+Route::put('/students/update/{id}', 'StudentController@update')->name('student.update');
 
-Route::delete('/students/delete/{id}','StudentController@destroy')->name('student.destroy');
+Route::delete('/students/delete/{id}', 'StudentController@destroy')->name('student.destroy');
 
+
+
+
+// Employee
+
+
+
+Route::resource('/employee', 'EmployeeController');
