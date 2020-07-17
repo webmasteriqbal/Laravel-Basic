@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,3 +45,14 @@ Route::delete('/students/delete/{id}', 'StudentController@destroy')->name('stude
 
 
 Route::resource('/employee', 'EmployeeController');
+
+
+Route::resource('/gallery', 'GalleryController');
+
+
+
+
+
+Route::get('/categories/trashed', 'CategoryController@trashed')->name('categories.trashed');
+Route::post('/categories/trashed/{category}', 'CategoryController@restore')->name('categories.restore');
+Route::resource('/categories', 'CategoryController');
